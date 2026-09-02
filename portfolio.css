@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f1218;
+    color: #94a3b8;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #181d26;
+    color: #94a3b8;
+    padding: 15px 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: white;
+    }
+
+    .brand-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        nav {
+            a {
+                padding: 10px;
+                border-radius: 5px;
+                text-decoration: none;
+                color: #94a3b8;
+                font-size: 13px;
+                font-weight: 500;
+
+                &:active {
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: #1f2633;
+                    color: white;
+                }
+            }
+
+            .nav-link.active {
+                color: white;
+                background-color: #1f2633;
+            }
+        }
+    }
+
+    .user-wallet {
+        padding: 5px 10px;
+        border-radius: 15px;
+        height: auto;
+        align-items: center;
+        background-color: #1e293b;
+        font-size: 13px;
+        font-weight: 600;
+
+        strong {
+            color: #10b981;
+        }
+    }
+}
+
+
+/* --- MAIN CONTAINER --- */
+main {
+    margin: 20px 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    /* 1. TOP 3 OVERVIEW CARDS */
+    .overview-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+
+        div {
+            background-color: #181d26;
+            border: 1px solid #293241;
+            border-radius: 8px;
+            padding: 16px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            p {
+                font-size: 11px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: #64748b;
+            }
+
+            h3 {
+                font-size: 22px;
+                font-weight: 700;
+                color: #ffffff;
+            }
+
+            .card-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                    background-color: rgba(16, 185, 129, 0.15);
+                    color: #10b981;
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    /* 2. HOLDINGS SECTION & HEADING */
+    .holdings-section {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+        }
+
+        /* 3. HOLDINGS TABLE */
+        .data-table-wrapper {
+            background-color: #181d26;
+            border: 1px solid #293241;
+            border-radius: 8px;
+            overflow-x: auto;
+
+            .coins-table {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+
+                th {
+                    color: #64748b;
+                    padding: 12px 16px;
+                    border-bottom: 1px solid #293241;
+                    font-size: 11px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                td {
+                    color: #ffffff;
+                    padding: 14px 16px;
+                    border-bottom: 1px solid #1a2230;
+                    font-size: 13px;
+                    font-weight: 500;
+                    font-feature-settings: 'tnum' on, 'lnum' on;
+
+                    button {
+                        background-color: #1f2633;
+                        color: #3b82f6;
+                        border: 1px solid #293241;
+                        padding: 6px 14px;
+                        border-radius: 5px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: background-color 0.2s, color 0.2s;
+
+                        &:hover {
+                            background-color: #3b82f6;
+                            color: #ffffff;
+                            border-color: #3b82f6;
+                        }
+                    }
+                }
+
+                tr:last-child td {
+                    border-bottom: none;
+                }
+
+                tr:hover {
+                    background-color: #1f2633;
+                }
+            }
+        }
+    }
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #181d26;
+    color: #94a3b8;
+    padding: 14px;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #293241;
+    margin-top: auto;
+}
