@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexTrader - Trade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="trade.css">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="brand-wrap">
+            <h2 class="brand-logo">ApexTrader</h2>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Market</a>
+                <a href="trade.html" class="nav-link active">Trade</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+            </nav>
+        </div>
+        <div class="user-wallet">
+            <span class="wallet-txt">Cash Balance:</span>
+            <strong id="userCashBal">$10,000.00</strong>
+        </div>
+    </header>
+
+    <main class="terminal-main">
+        <section class="chart-section">
+            <div class="coin-header">
+                <div class="coin-primary">
+                    <h2>Bitcoin BTC</h2>
+                    <h2>$64,250.00</h2>
+                    <span class="tag green">+2.45%</span>
+                </div>
+                <div class="coin-range">
+                    <div class="range-item">
+                        <p>24h H:</p>
+                        <p><b>$65,100</b></p>
+                    </div>
+                    <div class="range-item">
+                        <p>24h L:</p>
+                        <p><b>$63,200</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-wrapper">
+                <div class="time-btns">
+                    <button class="active">24H</button>
+                    <button>7D</button>
+                    <button>30D</button>
+                    <button>1Y</button>
+                </div>
+                <div class="graph">
+                    <canvas id="priceCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="orders-table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Price</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tradeHistoryRows">
+                        <tr>
+                            <td>12:45:10</td>
+                            <td class="tag-buy">BUY</td>
+                            <td>$64,250.00</td>
+                            <td>0.05 BTC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 2ND SECTION: RIGHT SIDE (BUY/SELL TERMINAL) -->
+        <section class="order-section">
+            <div class="trade-tabs">
+                <button class="tab-buy active" id="btnBuy" type="button">BUY</button>
+                <button class="tab-sell" id="btnSell" type="button">SELL</button>
+            </div>
+
+            <form class="order-form" id="orderForm">
+                <!-- 1. ORDER TYPE SELECT DROPDOWN -->
+                <div class="input-group">
+                    <label for="orderType">Order Type</label>
+                    <select id="orderType">
+                        <option value="market">Market Order</option>
+                        <option value="limit">Limit Order</option>
+                    </select>
+                </div>
+
+                <!-- 2. PRICE FIELD -->
+                <div class="input-group">
+                    <label for="orderPrice">Price (USD)</label>
+                    <input type="text" id="orderPrice" value="$64,250.00" readonly>
+                </div>
+
+                <!-- 3. QUANTITY FIELD -->
+                <div class="input-group">
+                    <label for="orderQty">Quantity</label>
+                    <input type="number" id="orderQty" placeholder="0.00" step="any" required>
+                </div>
+
+                <!-- 4. TOTAL & AVAILABLE SUMMARY -->
+                <div class="summary-box">
+                    <div class="summary-line">
+                        <span>Total:</span>
+                        <strong id="costVal">$0.00</strong>
+                    </div>
+                    <div class="summary-line">
+                        <span>Avail:</span>
+                        <span id="cashVal">$10,000.00</span>
+                    </div>
+                </div>
+
+                <!-- 5. ACTION BUTTON -->
+                <button type="submit" class="submit-order-btn" id="submitBtn">Buy BTC</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Market data powered by CoinGecko API</p>
+    </footer>
+
+    <script type="module" src="js/trade.js"></script>
+</body>
+
+</html>
