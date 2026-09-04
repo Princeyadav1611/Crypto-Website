@@ -167,6 +167,7 @@ main {
                 border: none;
                 font-size: 12px;
                 font-weight: 500;
+                cursor: pointer;
 
                 &:hover {
                     color: #fff;
