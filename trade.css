@@ -1,6 +1,6 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -21,57 +21,58 @@ header {
     margin: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #293241;
-}
 
-header h2 {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: white;
-}
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: white;
+    }
 
-header .brand-wrap {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+    .brand-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-header nav {
-    display: flex;
-    gap: 8px;
-}
+        nav {
+            a {
+                padding: 10px;
+                border-radius: 5px;
+                text-decoration: none;
+                color: #94a3b8;
+                font-size: 13px;
+                font-weight: 500;
 
-header nav a {
-    padding: 8px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #94a3b8;
-    font-size: 13px;
-    font-weight: 500;
-    transition: 0.2s ease;
-}
+                &:active {
+                    color: white;
+                }
 
-header nav a:hover,
-header nav a.active {
-    background-color: #1f2633;
-    color: white;
-}
+                &:hover {
+                    background-color: #1f2633;
+                    color: white;
+                }
+            }
 
-header .user-wallet {
-    padding: 6px 12px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background-color: #1e293b;
-    font-size: 13px;
-    font-weight: 600;
-}
+            .nav-link.active {
+                color: white;
+                background-color: #1f2633;
+            }
+        }
+    }
 
-header .user-wallet strong {
-    color: #10b981;
+    .user-wallet {
+        padding: 5px 10px;
+        border-radius: 15px;
+        height: auto;
+        align-items: center;
+        background-color: #1e293b;
+        font-size: 13px;
+        font-weight: 600;
+
+        strong {
+            color: #10b981;
+        }
+    }
 }
 
 
