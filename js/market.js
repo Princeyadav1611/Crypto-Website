@@ -79,27 +79,27 @@ function updateOverviewCards(coins) {
 
 function setupFilterButtons() {
     const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn =>{
-        btn.addEventListener("click", () =>{
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const filterType = btn.dataset.filter;
-            if(filterType === "all"){
+            if (filterType === "all") {
                 renderTable(allCoins);
             }
-            else if(filterType === "top10"){
+            else if (filterType === "top10") {
                 const top10 = allCoins.slice(0, 10);
                 renderTable(top10);
             }
-            else if(filterType ==="gainers"){
+            else if (filterType === "gainers") {
                 const gainers = [...allCoins].sort((a, b) => {
-                    return (b.price_change_percentage_24h || 0)-(a.price_change_percentage_24h || 0) 
+                    return (b.price_change_percentage_24h || 0) - (a.price_change_percentage_24h || 0)
                 });
                 renderTable(gainers);
             }
-            else if(filterType === "losers"){
+            else if (filterType === "losers") {
                 const losers = [...allCoins].sort((a, b) => {
-                    return (a.price_change_percentage_24h || 0)-(b.price_change_percentage_24h || 0)
+                    return (a.price_change_percentage_24h || 0) - (b.price_change_percentage_24h || 0)
                 });
                 renderTable(losers);
             }
@@ -116,7 +116,7 @@ function setupSearch() {
         const filteredCoins = allCoins.filter(coin => {
             const nameMatch = coin.name.toLowerCase().includes(query);
             const symbolMatch = coin.symbol.toLowerCase().includes(query);
-            
+
             return nameMatch || symbolMatch;
         });
         renderTable(filteredCoins);
@@ -135,6 +135,7 @@ async function getData() {
         }
 
         allCoins = await response.json();
+        sessionStorage.setItem('cachedCoins', JSON.stringify(allCoins));
         updateOverviewCards(allCoins);
         renderTable(allCoins);
         setupFilterButtons();
