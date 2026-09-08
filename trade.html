@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="trade.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230b0e14%22/><polygon points=%2255,15 25,55 48,55 45,85 75,45 52,45%22 fill=%22%2338bdf8%22/></svg>">
 </head>
 
 <body>
@@ -32,18 +31,18 @@
         <section class="chart-section">
             <div class="coin-header">
                 <div class="coin-primary">
-                    <h2>Bitcoin BTC</h2>
-                    <h2>$64,250.00</h2>
-                    <span class="tag green">+2.45%</span>
+                    <h2 id="coinTitle">Bitcoin BTC</h2>
+                    <h2 id="currentPriceDisplay">$0.00</h2>
+                    <span class="tag green" id="priceChangeBadge">+0.00%</span>
                 </div>
                 <div class="coin-range">
                     <div class="range-item">
                         <p>24h H:</p>
-                        <p><b>$65,100</b></p>
+                        <p><b id="high24Display">$0.00</b></p>
                     </div>
                     <div class="range-item">
                         <p>24h L:</p>
-                        <p><b>$63,200</b></p>
+                        <p><b id="low24Display">$0.00</b></p>
                     </div>
                 </div>
             </div>
@@ -71,12 +70,6 @@
                         </tr>
                     </thead>
                     <tbody id="tradeHistoryRows">
-                        <tr>
-                            <td>12:45:10</td>
-                            <td class="tag-buy">BUY</td>
-                            <td>$64,250.00</td>
-                            <td>0.05 BTC</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -132,7 +125,7 @@
     <footer class="app-footer">
         <p>Market data powered by CoinGecko API</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/trade.js"></script>
 </body>
 
