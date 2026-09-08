@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfolio.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230b0e14%22/><path d=%22M30 35 V28 A8 8 0 0 1 46 28 V35 H54 V28 A8 8 0 0 1 70 28 V35 M20 35 H80 A6 6 0 0 1 86 41 V74 A6 6 0 0 1 80 80 H20 A6 6 0 0 1 14 74 V41 A6 6 0 0 1 20 35 Z%22 fill=%22none%22 stroke=%22%236366f1%22 stroke-width=%227%22 stroke-linejoin=%22round%22/></svg>">
 </head>
 
 <body>
@@ -31,20 +30,20 @@
         <section class="overview-cards">
             <div>
                 <p>Total Net Worth</p>
-                <h3>$14,280.50</h3>
+                <h3 id="totalNetWorth">$0.00</h3>
             </div>
 
             <div>
                 <p>Total Profit / Loss</p>
                 <div class="card-row">
-                    <h3>+$1,280.50</h3>
-                    <span>+9.85%</span>
+                    <h3 id="totalPnlAmount">+$0.00</h3>
+                    <span id="totalPnlPercent">+0.00%</span>
                 </div>
             </div>
 
             <div>
                 <p>Available Cash</p>
-                <h3>$4,500.00</h3>
+                <h3 id="availableCash">$0.00</h3>
             </div>
         </section>
 
@@ -65,15 +64,7 @@
                         </tr>
                     </thead>
                     <tbody id="portfolioList">
-                        <tr>
-                            <td>Bitcoin BTC</td>
-                            <td>0.12 BTC</td>
-                            <td>$61,000.00</td>
-                            <td>$64,250.00</td>
-                            <td>$7,710.00</td>
-                            <td style="color: #10b981;">+$390.00 (+6.3%)</td>
-                            <td><button>Trade</button></td>
-                        </tr>
+                        <!-- Rows dynamically JavaScript se render hongi -->
                     </tbody>
                 </table>
             </div>
@@ -83,6 +74,7 @@
     <footer>
         <p>Market data powered by CoinGecko API</p>
     </footer>
+     <script type="module" src="js/portfolio.js"></script>
 </body>
 
 </html>
