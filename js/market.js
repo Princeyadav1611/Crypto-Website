@@ -1,4 +1,9 @@
 let allCoins = [];
+const userCashBal = document.getElementById('userCashBal');
+const bal = JSON.parse(localStorage.getItem("userCashBalance")) ?? 10000;
+if (userCashBal) {
+    userCashBal.innerText = `$${bal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
 
 function renderTable(coinsToDisplay) {
     const tableBody = document.getElementById('coinsList');
